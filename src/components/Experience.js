@@ -1,30 +1,18 @@
-import ResumeSection from "./ResumeSection";
-
 import React from "react";
-import ResumeList from "./ResumeList";
 import Job from "./Job";
+import ResumeList from "./ResumeList";
 
-class Experience extends React.Component {
-  render() {
-    const { data } = this.props;
-    return (
-      <ResumeSection
-        SectionHeader={() => <p>Experience</p>}
-        SectionForm={() => (
-          <form>
-            <input />
-          </form>
-        )}
-        SectionList={() => (
-          <ResumeList>
-            {data.jobs.map((child) => (
-              <Job data={child} />
-            ))}
-          </ResumeList>
-        )}
-      />
-    );
-  }
-}
+const Experience = ({ data }) => {
+  return (
+    <section className="resume-section experience">
+      <p className="resume-section__header">Experience</p>
+      <ResumeList listData={data.jobs} ListComponent={Job}>
+        {data.jobs.map((child) => (
+          <Job data={child} key={child.id} />
+        ))}
+      </ResumeList>
+    </section>
+  );
+};
 
 export default Experience;

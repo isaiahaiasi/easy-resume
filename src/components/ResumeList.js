@@ -1,8 +1,5 @@
-// methods for handling adding, moving, and removing of ResumeSections from list
-import React from "react";
+const ResumeList = ({ children }) => (
+  <ul className="resume-section__list">{children}</ul>
+);
 
-export default class ResumeList extends React.Component {
-  render() {
-    return <>{this.props.children}</>;
-  }
-}
+export default ResumeList;

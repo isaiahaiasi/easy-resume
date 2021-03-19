@@ -1,20 +1,21 @@
 import React from "react";
-import ResumeSection from "./ResumeSection";
+import { nanoid } from "nanoid";
 
-class Job extends React.Component {
-  render() {
-    const { data } = this.props;
-    return (
-      <ResumeSection
-        SectionHeader={() => <p>{data.title}</p>}
-        SectionForm={() => (
-          <form>
-            <input />
-          </form>
+const Job = ({ data }) => {
+  return (
+    <div className="resume-section job">
+      <div className="resume-section__main-content">
+        <p>{data.title}</p>
+      </div>
+      <ul className="resume-section__list">
+        {data.responsibilities ? (
+          data.responsibilities.map((resp) => <li key={nanoid(10)}>{resp}</li>)
+        ) : (
+          <p className="text-placeholder">add a responsibility</p>
         )}
-      />
-    );
-  }
-}
+      </ul>
+    </div>
+  );
+};
 
 export default Job;
