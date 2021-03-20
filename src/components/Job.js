@@ -7,7 +7,7 @@ const Job = ({ data }) => {
       <div className="resume-section__main-content">
         <div className="left">
           <p>
-            <span className="job__title">{data.title}</span>
+            <span className="text-bold">{data.title}</span>
             {" | "}
             <span>{data.company}</span>
           </p>
