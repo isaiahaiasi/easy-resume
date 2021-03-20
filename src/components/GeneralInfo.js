@@ -10,7 +10,7 @@ const GeneralInfo = ({ data }) => {
       {data.contactInfoList && data.contactInfoList.length > 0 ? (
         <ul className="resume-section__list resume-section__list--row flex-center">
           {data.contactInfoList.map((child) => (
-            <li key={child.id ?? nanoid(10)}>
+            <li className="resume-list-item" key={child.id ?? nanoid(10)}>
               {child.type}: {child.info}
             </li>
           ))}

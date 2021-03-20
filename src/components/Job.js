@@ -18,7 +18,11 @@ const Job = ({ data }) => {
       </div>
       <ul className="resume-section__list">
         {data.responsibilities ? (
-          data.responsibilities.map((resp) => <li key={nanoid(10)}>{resp}</li>)
+          data.responsibilities.map((resp) => (
+            <li className="resume-list-item" key={nanoid(10)}>
+              {resp}
+            </li>
+          ))
         ) : (
           <p className="text-placeholder">add a responsibility</p>
         )}
