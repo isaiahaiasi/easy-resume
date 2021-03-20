@@ -1,5 +1,7 @@
 import React from "react";
 import Experience from "./components/Experience";
+import Education from "./components/Education";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,11 +43,34 @@ class App extends React.Component {
           },
         ],
       },
+      education: {
+        schools: [
+          {
+            school: "University of Houston",
+            degree: "BA, Art",
+            dateBegan: "Sept 2014",
+            dateEnded: "May 2018",
+            gpa: "3.5",
+          },
+          {
+            school: "Arizona State University",
+            degree: "MSCS",
+            dateBegan: "Sept 2028",
+            dateEnded: "May 2031",
+            gpa: "3.3",
+          },
+        ],
+      },
     };
   }
   render() {
-    const { experience } = this.state;
-    return <Experience data={experience} />;
+    const { experience, education } = this.state;
+    return (
+      <main className="resume">
+        <Experience data={experience} />
+        <Education data={education} />
+      </main>
+    );
   }
 }
 

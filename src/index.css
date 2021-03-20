@@ -1,5 +1,7 @@
-html {
+html,
+main {
   padding: 0;
+  margin: 0;
 }
 
 body {
@@ -17,7 +19,8 @@ code {
 }
 
 p {
-  margin: 0.3rem;
+  padding: 0.3rem;
+  margin: 0;
 }
 
 .text-placeholder {
@@ -27,7 +30,7 @@ p {
 
 .resume-section {
   background: #eee;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 1rem 0 1rem;
 }
 
 .resume-section__header {
@@ -42,8 +45,13 @@ p {
 
 .resume-section__list {
   background: #ddd;
+  margin: 0;
 }
 
 .job__title {
   font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
 }
