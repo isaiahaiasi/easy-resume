@@ -18,3 +18,7 @@
   font-style: italic;
   color: grey;
 }
+
+.no-indent {
+  padding-left: 0;
+}

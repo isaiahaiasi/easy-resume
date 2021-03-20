@@ -71,5 +71,19 @@
         "gpa": "3.3"
       }
     ]
-  }
+  },
+  "skills": [
+    "HTML & CSS",
+    "JavaScript",
+    "Webpack",
+    "SASS",
+    "React",
+    "Node JS",
+    "Express",
+    "Mongo DB",
+    ".Net Core",
+    "MySQL",
+    "Unity",
+    "three.js"
+  ]
 }
