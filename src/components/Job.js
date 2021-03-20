@@ -5,7 +5,16 @@ const Job = ({ data }) => {
   return (
     <div className="resume-section job">
       <div className="resume-section__main-content">
-        <p>{data.title}</p>
+        <div className="left">
+          <p>
+            <span className="job__title">{data.title}</span>
+            {" | "}
+            <span>{data.company}</span>
+          </p>
+        </div>
+        <div className="right">
+          <p>{`${data.dateStarted} - ${data.dateEnded}`}</p>
+        </div>
       </div>
       <ul className="resume-section__list">
         {data.responsibilities ? (

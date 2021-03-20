@@ -16,14 +16,34 @@ code {
     monospace;
 }
 
-section {
-  padding: 0.3rem 1rem;
+p {
+  margin: 0.3rem;
+}
+
+.text-placeholder {
+  font-style: italic;
+  color: grey;
 }
 
 .resume-section {
   background: #eee;
+  padding: 0.3rem 1rem;
+}
+
+.resume-section__header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.resume-section__main-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .resume-section__list {
   background: #ddd;
+}
+
+.job__title {
+  font-weight: bold;
 }
