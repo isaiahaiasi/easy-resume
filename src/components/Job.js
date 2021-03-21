@@ -1,5 +1,5 @@
 import React from "react";
-import { nanoid } from "nanoid";
+import ResumeList from "./ResumeList";
 
 const Job = ({ data }) => {
   return (
@@ -16,17 +16,14 @@ const Job = ({ data }) => {
           <p>{`${data.dateStarted} - ${data.dateEnded}`}</p>
         </div>
       </div>
-      <ul className="resume-section__list">
-        {data.responsibilities ? (
-          data.responsibilities.map((resp) => (
-            <li className="resume-list-item" key={nanoid(10)}>
-              {resp}
-            </li>
-          ))
-        ) : (
-          <p className="text-placeholder">add a responsibility</p>
-        )}
-      </ul>
+      {data.responsibilities ? (
+        <ResumeList
+          dataList={data.responsibilities}
+          renderItem={(responsibility) => <div>{responsibility}</div>}
+        />
+      ) : (
+        <p className="text-placeholder">add a responsibility</p>
+      )}
     </div>
   );
 };

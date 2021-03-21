@@ -1,4 +1,4 @@
-import { nanoid } from "nanoid";
+import ResumeList from "./ResumeList";
 
 const GeneralInfo = ({ data }) => {
   return (
@@ -8,13 +8,15 @@ const GeneralInfo = ({ data }) => {
         <span className="text-bold"> {data.lastName}</span>
       </div>
       {data.contactInfoList && data.contactInfoList.length > 0 ? (
-        <ul className="resume-section__list resume-section__list--row flex-center">
-          {data.contactInfoList.map((child) => (
-            <li className="resume-list-item" key={child.id ?? nanoid(10)}>
+        <ResumeList
+          className="resume-section__list--row flex-center no-indent"
+          dataList={data.contactInfoList}
+          renderItem={(child) => (
+            <p>
               {child.type}: {child.info}
-            </li>
-          ))}
-        </ul>
+            </p>
+          )}
+        />
       ) : (
         <p className="placeholder">Add contact info</p>
       )}

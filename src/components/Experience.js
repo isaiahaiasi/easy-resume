@@ -1,15 +1,16 @@
 import React from "react";
 import Job from "./Job";
+import ResumeList from "./ResumeList";
 
 const Experience = ({ data }) => {
   return (
     <section className="resume-section experience">
       <p className="resume-section__header">Experience</p>
-      <ul className="resume-section__list no-indent">
-        {data.jobs.map((child) => (
-          <Job data={child} key={child.id} />
-        ))}
-      </ul>
+      <ResumeList
+        className="no-indent"
+        dataList={data.jobs}
+        renderItem={(child) => <Job data={child} />}
+      />
     </section>
   );
 };
