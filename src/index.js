@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
-import Resume from "./Resume";
-import data from "./demo-data-nested.json";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Resume data={data} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -16,14 +16,11 @@ const Job = ({ data }) => {
           <p>{`${data.dateStarted} - ${data.dateEnded}`}</p>
         </div>
       </div>
-      {data.responsibilities ? (
-        <ResumeList
-          dataList={data.responsibilities}
-          renderItem={(responsibility) => <div>{responsibility}</div>}
-        />
-      ) : (
-        <p className="text-placeholder">add a responsibility</p>
-      )}
+      <ResumeList
+        dataList={data.responsibilities}
+        renderItem={(responsibility) => <div>{responsibility}</div>}
+        Placeholder={<p className="text-placeholder">add a responsibility</p>}
+      />
     </div>
   );
 };
