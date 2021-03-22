@@ -1,8 +1,7 @@
 import { nanoid } from "nanoid";
-
 // A helper function to solve my weird pseudo-flat-data problem...
 const flatten = (oldData) => {
-  // get an array of key-value pairs
+  // get an array of key-value pairs to iterate over
   const dataEntries = Object.entries(oldData);
 
   // iterate over every top-level object,
@@ -19,7 +18,11 @@ const flatten = (oldData) => {
         objectEntries[j][1] = id;
       }
     }
-    dataEntries[i][1] = Object.fromEntries(objectEntries);
+    // if keys are indices, make an array--else make an object
+    dataEntries[i][1] =
+      objectEntries[0][0] === "0"
+        ? (dataEntries[i][1] = objectEntries.map((entry) => entry[1]))
+        : (dataEntries[i][1] = Object.fromEntries(objectEntries));
   }
 
   const flatData = Object.fromEntries(dataEntries);
