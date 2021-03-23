@@ -1,0 +1,77 @@
+{
+  "generalInfo": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "contactInfoList": "34-QJajref"
+  },
+  "experience": { "jobs": "TVVPQSyZTX" },
+  "education": { "schools": "WjGFAKD3r-" },
+  "skills": [
+    "HTML & CSS",
+    "JavaScript",
+    "Webpack",
+    "SASS",
+    "React",
+    "Node JS",
+    "Express",
+    "Mongo DB",
+    ".Net Core",
+    "MySQL",
+    "Unity",
+    "three.js"
+  ],
+  "34-QJajref": ["kF5MfWk63d", "Un49kRxKim", "LDUW7DRPN1"],
+  "TVVPQSyZTX": ["EMw7EMnDXf", "uu6Ihsf6Un", "122Tglho9g", "9nZO5pNsFu"],
+  "WjGFAKD3r-": ["rqM2Y7_tk6", "hSIY3P-_s9"],
+  "kF5MfWk63d": { "type": "phone", "info": "123-456-1234" },
+  "Un49kRxKim": { "type": "email", "info": "zerosuit@hotmail.com" },
+  "LDUW7DRPN1": { "type": "location", "info": "Seattle, WA" },
+  "EMw7EMnDXf": {
+    "id": "afeaewfawfa",
+    "title": "Call Center Agent",
+    "company": "Aperture",
+    "dateStarted": "Jan 1970",
+    "dateEnded": "Dec 1970",
+    "responsibilities": "Wu1C6GIVjz"
+  },
+  "uu6Ihsf6Un": {
+    "id": "eawgggggaga",
+    "title": "job 2",
+    "company": "random company name",
+    "dateStarted": "Jan 1970",
+    "dateEnded": "Dec 1970"
+  },
+  "122Tglho9g": {
+    "id": "cxzvczvcxz",
+    "title": "job 3",
+    "company": "random company name",
+    "dateStarted": "Jan 1970",
+    "dateEnded": "Dec 1970"
+  },
+  "9nZO5pNsFu": {
+    "id": "kuuytrjr",
+    "title": "job 4",
+    "company": "random company name",
+    "dateStarted": "Jan 1970",
+    "dateEnded": "Dec 1970"
+  },
+  "rqM2Y7_tk6": {
+    "school": "University of Houston",
+    "degree": "BA, Art",
+    "dateBegan": "Sept 2014",
+    "dateEnded": "May 2018",
+    "gpa": "3.5"
+  },
+  "hSIY3P-_s9": {
+    "school": "Arizona State University",
+    "degree": "MSCS",
+    "dateBegan": "Sept 2028",
+    "dateEnded": "May 2031",
+    "gpa": "3.3"
+  },
+  "Wu1C6GIVjz": [
+    "took out the trash",
+    "cleaned the dishes",
+    "wiped down the tables"
+  ]
+}

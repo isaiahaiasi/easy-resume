@@ -1,8 +1,7 @@
-import Resume from "./Resume";
-import data from "./demo-data-nested.json";
+import Store from "./Store";
 
 const App = () => {
-  return <Resume data={data} />;
+  return <Store />;
 };
 
 export default App;

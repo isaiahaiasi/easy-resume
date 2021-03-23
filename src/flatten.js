@@ -26,7 +26,6 @@ const flatten = (oldData) => {
   }
 
   const flatData = Object.fromEntries(dataEntries);
-  console.log(flatData);
   return flatData;
 };
 

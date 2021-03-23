@@ -1,12 +1,12 @@
 import React from "react";
-import defaultData from "./demo-data-nested.json";
+import defaultData from "./demo-data-custom.json";
 import Resume from "./Resume";
 
 const actions = {
   add: "ADD",
   get: "GET",
   set: "SET",
-  remove: "REMOVE",
+  delete: "DELETE",
 };
 
 // TODO: add localStorage
@@ -29,7 +29,8 @@ class Store extends React.Component {
 
   get(id) {
     if (!this.state[id]) {
-      throw new Error(`Tried to get data with key ${id}, which does not exist`);
+      console.warn(`Tried to get data with key ${id}, which does not exist`);
+      return null;
     }
 
     return this.state[id];
@@ -47,11 +48,11 @@ class Store extends React.Component {
 
   delete(id) {
     if (!this.state[id]) {
-      throw new Error(`Tried to delete non-existent key ${id}`);
+      console.warn(`Tried to delete non-existent key ${id}`);
+      return null;
     }
 
     this.setState({ [id]: undefined });
-    // TODO: remove item from containing list as well?
   }
 
   request(action, id, data) {
@@ -62,8 +63,8 @@ class Store extends React.Component {
         return this.get(id);
       case actions.set:
         return this.set(id, data);
-      case actions.remove:
-        return this.remove(id);
+      case actions.delete:
+        return this.delete(id);
       default:
         throw new Error(`Unhandled action type ${action}`);
     }

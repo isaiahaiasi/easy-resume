@@ -36,21 +36,24 @@
         "title": "job 2",
         "company": "random company name",
         "dateStarted": "Jan 1970",
-        "dateEnded": "Dec 1970"
+        "dateEnded": "Dec 1970",
+        "responsibilities": []
       },
       {
         "id": "cxzvczvcxz",
         "title": "job 3",
         "company": "random company name",
         "dateStarted": "Jan 1970",
-        "dateEnded": "Dec 1970"
+        "dateEnded": "Dec 1970",
+        "responsibilities": []
       },
       {
         "id": "kuuytrjr",
         "title": "job 4",
         "company": "random company name",
         "dateStarted": "Jan 1970",
-        "dateEnded": "Dec 1970"
+        "dateEnded": "Dec 1970",
+        "responsibilities": []
       }
     ]
   },

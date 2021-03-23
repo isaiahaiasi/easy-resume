@@ -1,14 +1,16 @@
-import ResumeList from "./ResumeList";
+import { nanoid } from "nanoid";
 
-const Skills = ({ data }) => {
+const Skills = ({ data, dataHandler }) => {
   return (
     <section className="resume-section skills">
       <p className="resume-section__header">Skills</p>
-      <ResumeList
-        className="resume-section__list--grid"
-        dataList={data}
-        renderItem={(skill) => <div>{skill}</div>}
-      />
+      <ul className="resume-section__list resume-section__list--grid">
+        {data.map((skill) => (
+          <li className="resume-list-item" key={nanoid(10)}>
+            {skill}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

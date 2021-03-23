@@ -1,14 +1,17 @@
 import ResumeList from "./ResumeList";
 import School from "./School";
 
-const Education = ({ data }) => {
+const Education = ({ data, dataHandler }) => {
   return (
     <section className="resume-section education">
       <p className="resume-section__header">Education</p>
       <ResumeList
         className="no-indent"
-        dataList={data.schools}
-        renderItem={(child) => <School data={child} />}
+        listId={data.schools}
+        dataHandler={dataHandler}
+        renderItem={(child, dataHandler) => (
+          <School dataId={child} dataHandler={dataHandler} />
+        )}
       />
     </section>
   );

@@ -1,4 +1,8 @@
-const School = ({ data }) => {
+import Store from "../Store";
+import { actions } from "../Store";
+
+const School = ({ dataId, dataHandler }) => {
+  const data = dataHandler(actions.get, dataId);
   return (
     <div className="resume-section school">
       <div className="resume-section__main-content">
