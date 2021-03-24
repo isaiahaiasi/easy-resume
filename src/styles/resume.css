@@ -1,6 +1,7 @@
 .resume {
   max-width: 60rem;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .resume-section {
@@ -43,7 +44,7 @@
   list-style-type: none;
   padding: 0.5rem 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
   text-align: center;
@@ -63,5 +64,9 @@
 
   .resume-section__list--row {
     flex-direction: row;
+  }
+
+  .resume-section__list--grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

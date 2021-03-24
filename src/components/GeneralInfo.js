@@ -10,7 +10,7 @@ const GeneralInfo = ({ data, dataHandler }) => {
         <span className="text-bold"> {data.lastName}</span>
       </div>
       {contactInfoList && contactInfoList.length > 0 ? (
-        <ul className="resume-section__list--row flex-center no-indent">
+        <ul className="resume-section__list resume-section__list--row flex-center no-indent">
           {contactInfoList.map((childId) => {
             const childData = dataHandler(actions.get, childId);
             return (

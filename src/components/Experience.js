@@ -1,6 +1,8 @@
 import React from "react";
 import Job from "./Job";
+import JobForm from "./JobForm";
 import ResumeList from "./ResumeList";
+
 const Experience = ({ data, dataHandler }) => {
   return (
     <section className="resume-section experience">
@@ -10,6 +12,7 @@ const Experience = ({ data, dataHandler }) => {
         listId={data.jobs}
         dataHandler={dataHandler}
         ListItem={Job}
+        AddForm={JobForm}
       />
     </section>
   );
