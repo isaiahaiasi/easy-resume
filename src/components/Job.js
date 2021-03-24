@@ -4,7 +4,7 @@ import { actions } from "../Store";
 
 // could pass data directly instead of id,
 // atm just doing this for """consistency"""
-const Job = ({ dataId, dataHandler }) => {
+const Job = ({ dataId, dataHandler, isEditing }) => {
   const data = dataHandler(actions.get, dataId);
   const responsibilities = dataHandler(actions.get, data.responsibilities);
   console.log(responsibilities);
@@ -22,6 +22,7 @@ const Job = ({ dataId, dataHandler }) => {
           <p>{`${data.dateStarted} - ${data.dateEnded}`}</p>
         </div>
       </div>
+      {isEditing && <p className="text-placeholder">Editing this one...</p>}
       <ul className="resume-section__list">
         {responsibilities ? (
           responsibilities.map((a) => (

@@ -9,9 +9,7 @@ const Education = ({ data, dataHandler }) => {
         className="no-indent"
         listId={data.schools}
         dataHandler={dataHandler}
-        renderItem={(child, dataHandler) => (
-          <School dataId={child} dataHandler={dataHandler} />
-        )}
+        ListItem={School}
       />
     </section>
   );

@@ -9,9 +9,7 @@ const Experience = ({ data, dataHandler }) => {
         className="no-indent"
         listId={data.jobs}
         dataHandler={dataHandler}
-        renderItem={(child, dataHandler) => (
-          <Job dataId={child} dataHandler={dataHandler} />
-        )}
+        ListItem={Job}
       />
     </section>
   );
