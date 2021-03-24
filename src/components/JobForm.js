@@ -8,11 +8,13 @@ class JobForm extends React.Component {
     this.state = {
       title: title,
       company: company,
+      // TODO: handling date formatting (input can't read my format, input format is ugly)
       dateStarted: dateStarted,
       dateEnded: dateEnded,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(e) {
@@ -22,11 +24,16 @@ class JobForm extends React.Component {
     this.setState({ [target.name]: value });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
+  }
+
   render() {
-    const { onSubmit, onCancel, newForm } = this.props;
-    const { title, company, dateFrom, dateTo } = this.state;
+    const { onCancel, newForm } = this.props;
+    const { title, company, dateStarted, dateEnded } = this.state;
     return (
-      <form onSubmit={onSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <Input
           type="text"
           name="title"
@@ -43,16 +50,16 @@ class JobForm extends React.Component {
         />
         <Input
           type="date"
-          name="dateFrom"
+          name="dateStarted"
           label="Date began:"
-          value={dateFrom}
+          value={dateStarted}
           onChange={this.handleInputChange}
         />
         <Input
           type="date"
-          name="dateTo"
+          name="dateEnded"
           label="Date ended:"
-          value={dateTo}
+          value={dateEnded}
           onChange={this.handleInputChange}
         />
         <input type="submit" value={newForm ? "Add Job" : "Save changes"} />

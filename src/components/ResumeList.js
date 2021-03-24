@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import { actions } from "../Store";
 
@@ -33,9 +34,11 @@ const ResumeList = ({
     setEditItem("");
   };
 
-  const addItem = (e) => {
-    e.preventDefault();
-    console.log("addingItem");
+  const addItem = (data) => {
+    console.log(data);
+    const id = nanoid(10);
+    dataHandler(actions.add, id, data);
+    dataHandler(actions.set, listId, [...dataList, id]);
     toggleAddForm(false);
   };
 

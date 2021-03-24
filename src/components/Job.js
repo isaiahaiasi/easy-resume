@@ -9,9 +9,8 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
   const data = dataHandler(actions.get, dataId);
   const responsibilities = dataHandler(actions.get, data.responsibilities);
 
-  const addJob = (e) => {
-    e.preventDefault();
-    console.log("adding job...");
+  const editJob = (data) => {
+    dataHandler(actions.set, dataId, data);
     closeEdit();
   };
 
@@ -45,7 +44,7 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
   );
 
   const renderForm = () => (
-    <JobForm data={data} onSubmit={addJob} onCancel={closeEdit} />
+    <JobForm data={data} onSubmit={editJob} onCancel={closeEdit} />
   );
 
   return isEditing ? renderForm() : renderStatic();
