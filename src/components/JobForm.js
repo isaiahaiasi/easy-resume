@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import React from "react";
 import Input from "./general/Input";
 
@@ -15,7 +14,6 @@ class JobForm extends React.Component {
     this.state = {
       title: title,
       company: company,
-      // TODO: handling date formatting (input can't read my format, input format is ugly)
       dateStarted: dateStarted,
       dateEnded: dateEnded,
       responsibilities: responsibilities,
@@ -94,7 +92,7 @@ class JobForm extends React.Component {
               label=""
               value={r}
               onChange={(e) => this.handleSublistInputChange(e, i)}
-              key={nanoid(10)}
+              key={i}
             />
           ))}
         <input type="submit" value={newForm ? "Add Job" : "Save changes"} />

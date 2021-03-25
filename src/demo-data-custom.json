@@ -27,11 +27,10 @@
   "Un49kRxKim": { "type": "email", "info": "zerosuit@hotmail.com" },
   "LDUW7DRPN1": { "type": "location", "info": "Seattle, WA" },
   "EMw7EMnDXf": {
-    "id": "afeaewfawfa",
     "title": "Call Center Agent",
     "company": "Aperture",
-    "dateStarted": "Jan 1970",
-    "dateEnded": "Dec 1970",
+    "dateStarted": "1970-01-01",
+    "dateEnded": "1970-12-01",
     "responsibilities": [
       "took out the trash",
       "cleaned the dishes",
@@ -39,25 +38,22 @@
     ]
   },
   "uu6Ihsf6Un": {
-    "id": "eawgggggaga",
     "title": "job 2",
     "company": "random company name",
-    "dateStarted": "Jan 1970",
-    "dateEnded": "Dec 1970"
+    "dateStarted": "1970-01-01",
+    "dateEnded": "1970-12-31"
   },
   "122Tglho9g": {
-    "id": "cxzvczvcxz",
     "title": "job 3",
     "company": "random company name",
-    "dateStarted": "Jan 1970",
-    "dateEnded": "Dec 1970"
+    "dateStarted": "1970-01-01",
+    "dateEnded": "1970-12-31"
   },
   "9nZO5pNsFu": {
-    "id": "kuuytrjr",
     "title": "job 4",
     "company": "random company name",
-    "dateStarted": "Jan 1970",
-    "dateEnded": "Dec 1970"
+    "dateStarted": "1970-01-01",
+    "dateEnded": "1970-12-31"
   },
   "rqM2Y7_tk6": {
     "school": "University of Houston",

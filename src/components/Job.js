@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import React from "react";
 import { actions } from "../Store";
 import JobForm from "./JobForm";
+import { formatDate } from "../handleDates";
 
 // could pass data directly instead of id,
 // atm just doing this for """consistency"""
@@ -24,7 +25,9 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
           </p>
         </div>
         <div className="right">
-          <p>{`${data.dateStarted} - ${data.dateEnded}`}</p>
+          <p>{`${formatDate(data.dateStarted)} - ${formatDate(
+            data.dateEnded
+          )}`}</p>
         </div>
       </div>
       {isEditing && <p className="text-placeholder">Editing this one...</p>}
