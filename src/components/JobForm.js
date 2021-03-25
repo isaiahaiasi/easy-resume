@@ -20,6 +20,8 @@ class JobForm extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSublistInputChange = this.handleSublistInputChange.bind(this);
+    this.handleRemoveSublistItem = this.handleRemoveSublistItem.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -38,8 +40,24 @@ class JobForm extends React.Component {
     this.setState({ responsibilities: newResponsibilities });
   }
 
+  handleRemoveSublistItem(e, i) {
+    this.setState(({ responsibilities }) => ({
+      responsibilities: responsibilities.filter((r, index) => i !== index),
+    }));
+  }
+
+  handleAddSublistItem() {
+    const placeholderText = "New responsibility";
+    this.setState(({ responsibilities }) => ({
+      responsibilities: responsibilities
+        ? [...responsibilities, placeholderText]
+        : [placeholderText],
+    }));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+
     this.props.onSubmit(this.state);
   }
 
@@ -84,19 +102,47 @@ class JobForm extends React.Component {
         />
 
         <p>Responsibilities:</p>
-        {!newForm &&
-          responsibilities.map((r, i) => (
-            <Input
-              type="text"
-              name={`responsibility-${i}`}
-              label=""
-              value={r}
-              onChange={(e) => this.handleSublistInputChange(e, i)}
-              key={i}
-            />
-          ))}
+        <div className="sublist">
+          {responsibilities && responsibilities.length > 0 ? (
+            responsibilities.map((r, i) => (
+              <div key={i}>
+                <Input
+                  type="text"
+                  name={`responsibility-${i}`}
+                  label=""
+                  value={r}
+                  onChange={(e) => this.handleSublistInputChange(e, i)}
+                  key={i}
+                />
+
+                <button
+                  type="button"
+                  onClick={(e) => this.handleRemoveSublistItem(e, i)}
+                >
+                  Delete
+                </button>
+              </div>
+            ))
+          ) : (
+            <p className="text-placeholder">
+              Add a responsibility/achievement!
+            </p>
+          )}
+
+          <button
+            type="button"
+            onClick={() => {
+              this.handleAddSublistItem();
+            }}
+          >
+            Add Responsibility
+          </button>
+        </div>
+
         <input type="submit" value={newForm ? "Add Job" : "Save changes"} />
-        <button onClick={onCancel}>Cancel</button>
+        <button onClick={onCancel} type="button">
+          Cancel
+        </button>
       </form>
     );
   }
@@ -106,8 +152,11 @@ JobForm.defaultProps = {
   data: {
     title: "Title",
     company: "Company",
-    dateStarted: "",
-    dateEnded: "",
+    // TODO: figure out better defaults, or handle null better
+    // possibly also: add "present" option to dateEnded?
+    dateStarted: "2021-01-01",
+    dateEnded: "2021-01-01",
+    responsibilities: [],
   },
 };
 

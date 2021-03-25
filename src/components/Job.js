@@ -39,7 +39,9 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
             </li>
           ))
         ) : (
-          <li className="resume-list-item text-placeholder">Add a task</li>
+          <li className="resume-list-item text-placeholder">
+            Edit to add a task
+          </li>
         )}
       </ul>
     </div>

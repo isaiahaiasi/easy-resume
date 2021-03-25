@@ -31,5 +31,11 @@ p {
 .input {
   display: block;
   width: 100%;
-  max-width: 20em;
+  height: 1.5rem;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 40rem) {
+  .input {
+    max-width: 20em;
+  }
 }
