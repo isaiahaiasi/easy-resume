@@ -32,7 +32,11 @@
     "company": "Aperture",
     "dateStarted": "Jan 1970",
     "dateEnded": "Dec 1970",
-    "responsibilities": "Wu1C6GIVjz"
+    "responsibilities": [
+      "took out the trash",
+      "cleaned the dishes",
+      "wiped down the tables"
+    ]
   },
   "uu6Ihsf6Un": {
     "id": "eawgggggaga",
@@ -68,10 +72,5 @@
     "dateBegan": "Sept 2028",
     "dateEnded": "May 2031",
     "gpa": "3.3"
-  },
-  "Wu1C6GIVjz": [
-    "took out the trash",
-    "cleaned the dishes",
-    "wiped down the tables"
-  ]
+  }
 }

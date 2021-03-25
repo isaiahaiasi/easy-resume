@@ -7,7 +7,6 @@ import JobForm from "./JobForm";
 // atm just doing this for """consistency"""
 const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
   const data = dataHandler(actions.get, dataId);
-  const responsibilities = dataHandler(actions.get, data.responsibilities);
 
   const editJob = (data) => {
     dataHandler(actions.set, dataId, data);
@@ -30,8 +29,8 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
       </div>
       {isEditing && <p className="text-placeholder">Editing this one...</p>}
       <ul className="resume-section__list">
-        {responsibilities ? (
-          responsibilities.map((text) => (
+        {data.responsibilities ? (
+          data.responsibilities.map((text) => (
             <li className="resume-list-item" key={nanoid(10)}>
               {text}
             </li>
