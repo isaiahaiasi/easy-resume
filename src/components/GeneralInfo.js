@@ -5,7 +5,10 @@ const GeneralInfo = ({ data, dataHandler }) => {
   const contactInfoList = dataHandler(actions.get, data.contactInfoList);
   return (
     <section className="resume-section">
-      <div className="resume-section__header text-center">
+      <div
+        className="resume-section__header text-center"
+        style={{ fontSize: "2.8rem" }}
+      >
         <span>{data.firstName}</span>{" "}
         <span className="text-bold"> {data.lastName}</span>
       </div>

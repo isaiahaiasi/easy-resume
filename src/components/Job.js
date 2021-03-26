@@ -2,8 +2,8 @@ import React from "react";
 import JobForm from "./JobForm";
 import { formatDate } from "../handleDates";
 
-// could pass data directly instead of id,
-// atm just doing this for """consistency"""
+// TODO: move conditional rendering to ResumeList,
+// (this can just be the static render--possibly rename)
 const Job = ({ data, isEditing, onConfirmEdit }) => {
   const renderStatic = () => (
     <div className="resume-section job">
@@ -39,7 +39,12 @@ const Job = ({ data, isEditing, onConfirmEdit }) => {
   );
 
   const renderForm = () => (
-    <JobForm data={data} onSubmit={onConfirmEdit} onCancel={onConfirmEdit} />
+    <JobForm
+      data={data}
+      onSubmit={onConfirmEdit}
+      // calling submit function with old data to cancel... really stupid, TODO: fix
+      onCancel={() => onConfirmEdit(data)}
+    />
   );
 
   return isEditing ? renderForm() : renderStatic();

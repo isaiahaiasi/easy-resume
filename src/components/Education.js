@@ -1,5 +1,6 @@
 import ResumeList from "./ResumeList";
 import School from "./School";
+import SchoolForm from "./SchoolForm";
 
 const Education = ({ data, dataHandler }) => {
   return (
@@ -10,6 +11,7 @@ const Education = ({ data, dataHandler }) => {
         listId={data.schools}
         dataHandler={dataHandler}
         ListItem={School}
+        AddForm={SchoolForm}
       />
     </section>
   );

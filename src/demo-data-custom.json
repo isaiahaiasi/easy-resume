@@ -58,15 +58,15 @@
   "rqM2Y7_tk6": {
     "school": "University of Houston",
     "degree": "BA, Art",
-    "dateBegan": "Sept 2014",
-    "dateEnded": "May 2018",
+    "dateStarted": "2014-08-01",
+    "dateEnded": "2018-05-01",
     "gpa": "3.5"
   },
   "hSIY3P-_s9": {
     "school": "Arizona State University",
     "degree": "MSCS",
-    "dateBegan": "Sept 2028",
-    "dateEnded": "May 2031",
+    "dateStarted": "2028-08-01",
+    "dateEnded": "2031-05-01",
     "gpa": "3.3"
   }
 }
