@@ -42,6 +42,11 @@ const ResumeList = ({
     toggleAddForm(false);
   };
 
+  const onItemChange = (id, data) => {
+    dataHandler(actions.set, id, data);
+    setEditItem("");
+  };
+
   return (
     <>
       <ul className={`resume-section__list ${className}`}>
@@ -49,10 +54,9 @@ const ResumeList = ({
           ? dataList.map((child) => (
               <li className="resume-list-item" key={child}>
                 <ListItem
-                  dataId={child}
-                  dataHandler={dataHandler}
+                  data={dataHandler(actions.get, child)}
                   isEditing={editItem === child}
-                  closeEdit={() => setEditItem("")}
+                  onConfirmEdit={(data) => onItemChange(child, data)}
                 />
                 {editItem === child ? (
                   <button onClick={() => onDelete(child)}>delete</button>

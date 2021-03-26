@@ -1,19 +1,10 @@
-import { nanoid } from "nanoid";
 import React from "react";
-import { actions } from "../Store";
 import JobForm from "./JobForm";
 import { formatDate } from "../handleDates";
 
 // could pass data directly instead of id,
 // atm just doing this for """consistency"""
-const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
-  const data = dataHandler(actions.get, dataId);
-
-  const editJob = (data) => {
-    dataHandler(actions.set, dataId, data);
-    closeEdit();
-  };
-
+const Job = ({ data, isEditing, onConfirmEdit }) => {
   const renderStatic = () => (
     <div className="resume-section job">
       <div className="resume-section__main-content">
@@ -33,8 +24,8 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
       {isEditing && <p className="text-placeholder">Editing this one...</p>}
       <ul className="resume-section__list--sublist">
         {data.responsibilities ? (
-          data.responsibilities.map((text) => (
-            <li className="resume-list-item" key={nanoid(10)}>
+          data.responsibilities.map((text, i) => (
+            <li className="resume-list-item" key={i}>
               {text}
             </li>
           ))
@@ -48,7 +39,7 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
   );
 
   const renderForm = () => (
-    <JobForm data={data} onSubmit={editJob} onCancel={closeEdit} />
+    <JobForm data={data} onSubmit={onConfirmEdit} onCancel={onConfirmEdit} />
   );
 
   return isEditing ? renderForm() : renderStatic();
