@@ -24,14 +24,14 @@ const Job = ({ dataId, dataHandler, isEditing, closeEdit }) => {
             <span>{data.company}</span>
           </p>
         </div>
-        <div className="right">
+        <div className="text-right">
           <p>{`${formatDate(data.dateStarted)} - ${formatDate(
             data.dateEnded
           )}`}</p>
         </div>
       </div>
       {isEditing && <p className="text-placeholder">Editing this one...</p>}
-      <ul className="resume-section__list">
+      <ul className="resume-section__list--sublist">
         {data.responsibilities ? (
           data.responsibilities.map((text) => (
             <li className="resume-list-item" key={nanoid(10)}>
