@@ -13,7 +13,7 @@ const Resume = ({ data, dataHandler }) => {
       {/* <GeneralInfo data={generalInfo} dataHandler={dataHandler} /> */}
       <Experience data={experience} dataHandler={dataHandler} />
       <Education data={education} dataHandler={dataHandler} />
-      {/* <Skills data={skills} dataHandler={dataHandler} /> */}
+      <Skills data={skills} dataHandler={dataHandler} />
     </main>
   );
 };

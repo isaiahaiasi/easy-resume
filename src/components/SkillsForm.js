@@ -1,0 +1,46 @@
+import React from "react";
+import Input from "./general/Input";
+
+class SkillsForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { skills: this.props.data };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e, i) {
+    this.setState(({ skills }) => ({
+      skills: skills.map((s, j) => (i === j ? e.target.value : s)),
+    }));
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.onSubmit(this.state.skills);
+  }
+
+  render() {
+    const { skills } = this.state;
+
+    return (
+      <form>
+        {skills.map((skill, i) => (
+          <div key={i}>
+            <Input
+              type="text"
+              name={`skill-${i}`}
+              label=""
+              value={skill}
+              onChange={(e) => this.handleChange(e, i)}
+            />
+          </div>
+        ))}
+        <input type="submit" onClick={this.handleSubmit} value="submit" />
+      </form>
+    );
+  }
+}
+
+export default SkillsForm;

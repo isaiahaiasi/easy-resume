@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "./general/Input";
 
+// TODO: create a generic Form component to handle things like
 class JobForm extends React.Component {
   constructor(props) {
     super(props);
@@ -112,7 +113,6 @@ class JobForm extends React.Component {
                   label=""
                   value={r}
                   onChange={(e) => this.handleSublistInputChange(e, i)}
-                  key={i}
                 />
 
                 <button
