@@ -7,12 +7,27 @@ class SkillsForm extends React.Component {
     this.state = { skills: this.props.data };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e, i) {
     this.setState(({ skills }) => ({
       skills: skills.map((s, j) => (i === j ? e.target.value : s)),
+    }));
+  }
+
+  handleAdd() {
+    const placeholder = "New skill";
+    this.setState(({ skills }) => ({
+      skills: skills ? [...skills, placeholder] : [placeholder],
+    }));
+  }
+
+  handleRemove(i) {
+    this.setState(({ skills }) => ({
+      skills: skills.filter((s, j) => i !== j),
     }));
   }
 
@@ -35,8 +50,14 @@ class SkillsForm extends React.Component {
               value={skill}
               onChange={(e) => this.handleChange(e, i)}
             />
+            <button type="button" onClick={() => this.handleRemove(i)}>
+              &times;
+            </button>
           </div>
         ))}
+        <button type="button" onClick={this.handleAdd}>
+          Add skill
+        </button>
         <input type="submit" onClick={this.handleSubmit} value="submit" />
       </form>
     );
