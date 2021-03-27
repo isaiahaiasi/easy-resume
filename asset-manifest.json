@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/easy-cv/static/css/main.b8617f68.chunk.css",
-    "main.js": "/easy-cv/static/js/main.0bc02d3a.chunk.js",
-    "main.js.map": "/easy-cv/static/js/main.0bc02d3a.chunk.js.map",
-    "runtime-main.js": "/easy-cv/static/js/runtime-main.31aba491.js",
-    "runtime-main.js.map": "/easy-cv/static/js/runtime-main.31aba491.js.map",
-    "static/js/2.1d4131ce.chunk.js": "/easy-cv/static/js/2.1d4131ce.chunk.js",
-    "static/js/2.1d4131ce.chunk.js.map": "/easy-cv/static/js/2.1d4131ce.chunk.js.map",
-    "index.html": "/easy-cv/index.html",
-    "static/css/main.b8617f68.chunk.css.map": "/easy-cv/static/css/main.b8617f68.chunk.css.map",
-    "static/js/2.1d4131ce.chunk.js.LICENSE.txt": "/easy-cv/static/js/2.1d4131ce.chunk.js.LICENSE.txt"
+    "main.css": "/easy-resume/static/css/main.b8617f68.chunk.css",
+    "main.js": "/easy-resume/static/js/main.0bc02d3a.chunk.js",
+    "main.js.map": "/easy-resume/static/js/main.0bc02d3a.chunk.js.map",
+    "runtime-main.js": "/easy-resume/static/js/runtime-main.6ce4b553.js",
+    "runtime-main.js.map": "/easy-resume/static/js/runtime-main.6ce4b553.js.map",
+    "static/js/2.1d4131ce.chunk.js": "/easy-resume/static/js/2.1d4131ce.chunk.js",
+    "static/js/2.1d4131ce.chunk.js.map": "/easy-resume/static/js/2.1d4131ce.chunk.js.map",
+    "index.html": "/easy-resume/index.html",
+    "static/css/main.b8617f68.chunk.css.map": "/easy-resume/static/css/main.b8617f68.chunk.css.map",
+    "static/js/2.1d4131ce.chunk.js.LICENSE.txt": "/easy-resume/static/js/2.1d4131ce.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.31aba491.js",
+    "static/js/runtime-main.6ce4b553.js",
     "static/js/2.1d4131ce.chunk.js",
     "static/css/main.b8617f68.chunk.css",
     "static/js/main.0bc02d3a.chunk.js"
