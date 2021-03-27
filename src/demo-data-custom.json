@@ -1,8 +1,12 @@
 {
   "generalInfo": {
-    "firstName": "John",
+    "firstName": "Barry",
     "lastName": "Doe",
-    "contactInfoList": "34-QJajref"
+    "contactInfo": {
+      "phone": "123-456-1234",
+      "email": "zootsuit@hotmail.com",
+      "location": "Seattle, WA"
+    }
   },
   "experience": { "jobs": "TVVPQSyZTX" },
   "education": { "schools": "WjGFAKD3r-" },
@@ -20,53 +24,34 @@
     "Unity",
     "three.js"
   ],
-  "34-QJajref": ["kF5MfWk63d", "Un49kRxKim", "LDUW7DRPN1"],
-  "TVVPQSyZTX": ["EMw7EMnDXf", "uu6Ihsf6Un", "122Tglho9g", "9nZO5pNsFu"],
-  "WjGFAKD3r-": ["rqM2Y7_tk6", "hSIY3P-_s9"],
-  "kF5MfWk63d": { "type": "phone", "info": "123-456-1234" },
-  "Un49kRxKim": { "type": "email", "info": "zerosuit@hotmail.com" },
-  "LDUW7DRPN1": { "type": "location", "info": "Seattle, WA" },
+  "TVVPQSyZTX": ["EMw7EMnDXf", "uu6Ihsf6Un"],
+  "WjGFAKD3r-": ["rqM2Y7_tk6"],
   "EMw7EMnDXf": {
-    "title": "Call Center Agent",
-    "company": "Aperture",
+    "title": "Quality Assurance Agent",
+    "company": "Aperture Labs",
     "dateStarted": "1970-01-01",
     "dateEnded": "1970-12-01",
     "responsibilities": [
-      "took out the trash",
-      "cleaned the dishes",
-      "wiped down the tables"
+      "Spearheaded new test chamber projects.",
+      "Collaborated with engineering team to design tests for a wide variety of new products."
     ]
   },
   "uu6Ihsf6Un": {
-    "title": "job 2",
-    "company": "random company name",
+    "title": "Black Mesa Research Facility",
+    "company": "Research Assistant",
     "dateStarted": "1970-01-01",
-    "dateEnded": "1970-12-31"
-  },
-  "122Tglho9g": {
-    "title": "job 3",
-    "company": "random company name",
-    "dateStarted": "1970-01-01",
-    "dateEnded": "1970-12-31"
-  },
-  "9nZO5pNsFu": {
-    "title": "job 4",
-    "company": "random company name",
-    "dateStarted": "1970-01-01",
-    "dateEnded": "1970-12-31"
+    "dateEnded": "1970-12-31",
+    "responsibilities": [
+      "Worked on team that produced groundbreaking research into anomolous materials",
+      "Assisted multiple teams across diverse fields of study, including exobiology and cryptochemistry.",
+      "Performed effectively in a high-pressure environment"
+    ]
   },
   "rqM2Y7_tk6": {
-    "school": "University of Houston",
-    "degree": "BA, Art",
+    "school": "Example University",
+    "degree": "Bachelor of Science, Math",
     "dateStarted": "2014-08-01",
     "dateEnded": "2018-05-01",
     "gpa": "3.5"
-  },
-  "hSIY3P-_s9": {
-    "school": "Arizona State University",
-    "degree": "MSCS",
-    "dateStarted": "2028-08-01",
-    "dateEnded": "2031-05-01",
-    "gpa": "3.3"
   }
 }

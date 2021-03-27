@@ -10,9 +10,9 @@ const Resume = ({ data, dataHandler }) => {
   const { generalInfo, experience, education, skills } = data;
   return (
     <main className="resume">
-      {/* <GeneralInfo data={generalInfo} dataHandler={dataHandler} /> */}
-      <Experience data={experience} dataHandler={dataHandler} />
+      <GeneralInfo data={generalInfo} dataHandler={dataHandler} />
       <Education data={education} dataHandler={dataHandler} />
+      <Experience data={experience} dataHandler={dataHandler} />
       <Skills data={skills} dataHandler={dataHandler} />
     </main>
   );
