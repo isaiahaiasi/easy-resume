@@ -1,96 +1,55 @@
 import React from "react";
 import Input from "./general/Input";
+import { useFormInput } from "../hooks/input-hooks";
 
-class SchoolForm extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const { degree, school, dateStarted, dateEnded, gpa } = this.props.data;
-
-    this.state = {
-      degree,
-      school,
-      dateStarted,
-      dateEnded,
-      gpa,
-    };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleInputChange(e) {
-    const target = e.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-
-    this.setState({ [target.name]: value });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-
-    this.props.onSubmit(this.state);
-  }
-
-  render() {
-    const { onCancel, newForm } = this.props;
-    const { degree, school, dateStarted, dateEnded, gpa } = this.state;
-
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <Input
-          type="text"
-          name="degree"
-          label="Degree:"
-          value={degree}
-          onChange={this.handleInputChange}
-        />
-        <Input
-          type="text"
-          name="school"
-          label="School:"
-          value={school}
-          onChange={this.handleInputChange}
-        />
-        <Input
-          type="date"
-          name="dateStarted"
-          label="Date began:"
-          value={dateStarted}
-          onChange={this.handleInputChange}
-        />
-        <Input
-          type="date"
-          name="dateEnded"
-          label="Date ended:"
-          value={dateEnded}
-          onChange={this.handleInputChange}
-        />
-        <Input
-          type="number"
-          name="gpa"
-          label="GPA:"
-          value={gpa}
-          onChange={this.handleInputChange}
-        />
-
-        <input type="submit" value={newForm ? "Add Job" : "Save changes"} />
-        <button onClick={onCancel} type="button">
-          Cancel
-        </button>
-      </form>
-    );
-  }
-}
-
-SchoolForm.defaultProps = {
-  data: {
-    degree: "Degree",
-    school: "School",
-    dateStarted: "2021-01-01",
-    dateEnded: "2021-01-01",
-    gpa: "3.0",
-  },
+const defaultSchool = {
+  degree: "Degree",
+  school: "School",
+  dateStarted: "2021-01-01",
+  dateEnded: "2021-01-01",
+  gpa: "3.0",
 };
 
-export default SchoolForm;
+export default function SchoolForm({
+  onSubmit,
+  onCancel,
+  isAddForm,
+  data = defaultSchool,
+}) {
+  const degree = useFormInput(data.degree);
+  const school = useFormInput(data.school);
+  const dateStarted = useFormInput(data.dateStarted);
+  const dateEnded = useFormInput(data.dateEnded);
+  const gpa = useFormInput(data.gpa);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit({
+      degree: degree.value,
+      school: school.value,
+      dateStarted: dateStarted.value,
+      dateEnded: dateEnded.value,
+      gpa: gpa.value,
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input name="degree" label="Degree:" {...degree} />
+      <Input name="school" label="school:" {...school} />
+      <Input
+        type="date"
+        name="dateStarted"
+        label="Date began:"
+        {...dateStarted}
+      />
+      <Input type="date" name="dateEnded" label="Date ended:" {...dateEnded} />
+      <Input type="number" name="gpa" label="GPA:" {...gpa} />
+
+      <input type="submit" value={isAddForm ? "Add School" : "Save changes"} />
+      <button onClick={onCancel} type="button">
+        Cancel
+      </button>
+    </form>
+  );
+}
