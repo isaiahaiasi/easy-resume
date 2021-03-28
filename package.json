@@ -1,6 +1,7 @@
 {
-  "name": "easy-cv",
+  "name": "easy-resume",
   "version": "0.1.0",
+  "homepage": "https://isaiahaiasi.github.io/easy-resume",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -40,6 +41,5 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"
-  },
-  "homepage": "https://isaiahaiasi.github.io/easy-resume"
+  }
 }

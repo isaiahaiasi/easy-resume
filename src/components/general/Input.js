@@ -6,7 +6,7 @@ function Input({ type, name, label, value, onChange }) {
       {label}
       <input
         className="input"
-        type={type}
+        type={type ?? "text"}
         name={name}
         value={value}
         onChange={onChange}

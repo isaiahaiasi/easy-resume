@@ -23,7 +23,7 @@ const Job = ({ data, isEditing, onConfirmEdit }) => {
       </div>
       {isEditing && <p className="text-placeholder">Editing this one...</p>}
       <ul className="resume-section__list--sublist">
-        {data.responsibilities ? (
+        {data.responsibilities && data.responsibilities.length > 0 ? (
           data.responsibilities.map((text, i) => (
             <li className="resume-list-item" key={i}>
               {text}
