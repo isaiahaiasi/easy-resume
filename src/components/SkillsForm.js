@@ -1,67 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "./general/Input";
+export default function SkillsForm({ data, onSubmit, onCancel }) {
+  const [skills, setSkills] = useState(data ?? []);
 
-class SkillsForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { skills: this.props.data };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
-    this.handleRemove = this.handleRemove.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(e, i) {
-    this.setState(({ skills }) => ({
-      skills: skills.map((s, j) => (i === j ? e.target.value : s)),
-    }));
-  }
-
-  handleAdd() {
-    const placeholder = "New skill";
-    this.setState(({ skills }) => ({
-      skills: skills ? [...skills, placeholder] : [placeholder],
-    }));
-  }
-
-  handleRemove(i) {
-    this.setState(({ skills }) => ({
-      skills: skills.filter((s, j) => i !== j),
-    }));
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.onSubmit(this.state.skills);
-  }
-
-  render() {
-    const { skills } = this.state;
-
-    return (
-      <form>
-        {skills.map((skill, i) => (
-          <div key={i}>
-            <Input
-              type="text"
-              name={`skill-${i}`}
-              label=""
-              value={skill}
-              onChange={(e) => this.handleChange(e, i)}
-            />
-            <button type="button" onClick={() => this.handleRemove(i)}>
-              &times;
-            </button>
-          </div>
-        ))}
-        <button type="button" onClick={this.handleAdd}>
-          Add skill
-        </button>
-        <input type="submit" onClick={this.handleSubmit} value="submit" />
-      </form>
+  const handleChangeItem = (e, i) => {
+    setSkills((prevSkills) =>
+      prevSkills.map((skill, j) => (i === j ? e.target.value : skill))
     );
-  }
-}
+  };
 
-export default SkillsForm;
+  const handleRemoveItem = (i) => {
+    setSkills((prevSkills) => prevSkills.filter((s, j) => j !== i));
+  };
+
+  const handleAddItem = (e, i) => {
+    setSkills((prevSkills) => [...prevSkills, "New skill"]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(skills);
+  };
+
+  const skillInputs =
+    skills && skills.length > 0 ? (
+      skills.map((s, i) => (
+        <div key={i}>
+          <Input
+            name={`skill-${i}`}
+            label=""
+            value={s}
+            onChange={(e) => handleChangeItem(e, i)}
+          />
+          <button type="button" onClick={() => handleRemoveItem(i)}>
+            &times;
+          </button>
+        </div>
+      ))
+    ) : (
+      <p className="text-placeholder">Add a skill!</p>
+    );
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {skillInputs}
+      <button type="button" onClick={handleAddItem}>
+        Add skill
+      </button>
+      <button onClick={onCancel} type="button">
+        Cancel
+      </button>
+      <input type="submit" value="Save changes" />
+    </form>
+  );
+}

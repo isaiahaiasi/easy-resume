@@ -23,12 +23,19 @@ const Skills = ({ data, dataHandler }) => {
     </>
   );
 
-  const renderForm = () => <SkillsForm data={data} onSubmit={onSubmit} />;
+  const renderForm = () => (
+    <SkillsForm
+      data={data}
+      onSubmit={onSubmit}
+      onCancel={() => setEditing(false)}
+    />
+  );
 
   return (
     <section className="resume-section skills">
       <p className="resume-section__header">Skills</p>
-      {isEditing ? renderForm() : renderStatic()}
+      {/* TODO: this is pretty weird--forces form open when list empty */}
+      {isEditing || data.length === 0 ? renderForm() : renderStatic()}
     </section>
   );
 };
