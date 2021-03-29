@@ -30,19 +30,13 @@ export default function JobForm({
   };
 
   const handleAddListItem = () => {
-    const placeholderText = "New responsibility";
-    setResponsibilities((prevState) =>
-      prevState ? [...prevState, placeholderText] : [placeholderText]
-    );
+    setResponsibilities((prevState) => [...prevState, "New responsibility"]);
   };
 
   const handleChangeListItem = (e, i) => {
-    const value = e.target.value;
-    setResponsibilities((prevState) => {
-      const newResponsibilities = [...prevState];
-      newResponsibilities[i] = value;
-      return newResponsibilities;
-    });
+    setResponsibilities((prevState) =>
+      prevState.map((r, j) => (i === j ? e.target.value : r))
+    );
   };
 
   const handleSubmit = (e) => {

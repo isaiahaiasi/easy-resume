@@ -22,7 +22,7 @@ const ResumeList = ({
       listId,
       dataList.filter((x) => x !== id)
     );
-    dataHandler(actions.delete, id);
+    dataHandler(actions.remove, id);
   };
 
   const onEdit = (id) => {
