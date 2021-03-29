@@ -1,76 +1,38 @@
 import React from "react";
+import { useFormInput } from "../hooks/input-hooks";
 import Input from "./general/Input";
 
-class GeneralInfoForm extends React.Component {
-  constructor(props) {
-    super(props);
-    const { data } = this.props;
-    this.state = {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      contactInfo: data.contactInfo,
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleContactInfoChange = this.handleContactInfoChange.bind(this);
-  }
+export default function GeneralInfoForm({ data, onSubmit, onCancel }) {
+  const firstName = useFormInput(data.firstName); // =>[value, onChange]
+  const lastName = useFormInput(data.lastName);
+  const location = useFormInput(data.contactInfo.location);
+  const email = useFormInput(data.contactInfo.email);
+  const phone = useFormInput(data.contactInfo.phone);
 
-  handleInputChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  handleContactInfoChange(prop, value) {
-    const newContactInfo = { ...this.state.contactInfo };
-    newContactInfo[prop] = value;
-    this.setState({ contactInfo: newContactInfo });
-  }
-
-  handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
-  }
+    onSubmit({
+      firstName: firstName.value,
+      lastName: lastName.value,
+      contactInfo: {
+        location: location.value,
+        email: email.value,
+        phone: phone.value,
+      },
+    });
+  };
 
-  render() {
-    const { firstName, lastName, contactInfo } = this.state;
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <Input
-          type="text"
-          name="firstName"
-          label="First Name:"
-          value={firstName}
-          onChange={this.handleInputChange}
-        />
-        <Input
-          type="text"
-          name="lastName"
-          label="Last Name:"
-          value={lastName}
-          onChange={this.handleInputChange}
-        />
-
-        {/* map array of [k,v] from contactInfo?? */}
-        <p>Contact Info:</p>
-        {Object.entries(contactInfo).map((item) => {
-          const [key, value] = item;
-          return (
-            <div key={key}>
-              <Input
-                type="text"
-                name={key}
-                label={key}
-                value={value}
-                onChange={(e) =>
-                  this.handleContactInfoChange(key, e.target.value)
-                }
-              />
-            </div>
-          );
-        })}
-        <input type="submit" value="Submit" />
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmit}>
+      <Input name="firstName" label="First name:" {...firstName} />
+      <Input name="lastName" label="Last name:" {...lastName} />
+      <Input type="tel" name="phone" label="Phone number:" {...phone} />
+      <Input type="email" name="email" label="Email" {...email} />
+      <Input name="location" label="Location" {...location} />
+      <input type="submit" value="Save changes" />
+      <button type="button" onClick={onCancel}>
+        cancel
+      </button>
+    </form>
+  );
 }
-
-export default GeneralInfoForm;

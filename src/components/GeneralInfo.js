@@ -43,9 +43,6 @@ const GeneralInfo = ({ data, dataHandler }) => {
   );
 
   const renderEditing = () => {
-    // no frickin clue how to handle this...
-    // -> contact info prob shouldn't be a list, since its a fixed set of unique values,
-    // { type: value, typeB: valueB } probably makes more sense
     return (
       <GeneralInfoForm
         data={data}
